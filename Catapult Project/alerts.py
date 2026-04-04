@@ -9,8 +9,9 @@ def nearby_trials(trials, user_loc):
 
         for loc in trial.get("locations", []):
 
-            # some trials have no coordinates
             geo = loc.get("geoPoint")
+
+            # skip if no coordinates exist
             if not geo:
                 continue
 
@@ -19,7 +20,6 @@ def nearby_trials(trials, user_loc):
                 geo.get("lon")
             )
 
-            # skip bad data
             if None in trial_loc:
                 continue
 
