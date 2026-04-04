@@ -1,14 +1,32 @@
-def match_score(user, trial):
+from geopy.distance import geodesic
 
-    score = 0
 
-    if user.get("condition") in trial.get("conditions", []):
-        score += 50
+def nearby_trials(trials, user_loc):
 
-    if trial.get("status") == "RECRUITING":
-        score += 20
+    alerts = []
 
-    if trial.get("locations"):
-        score += 30
+    for trial in trials:
 
-    return min(score, 100)
+        for loc in trial.get("locations", []):
+
+            # some trials have no coordinates
+            geo = loc.get("geoPoint")
+            if not geo:
+                continue
+
+            trial_loc = (
+                geo.get("lat"),
+                geo.get("lon")
+            )
+
+            # skip bad data
+            if None in trial_loc:
+                continue
+
+            distance = geodesic(user_loc, trial_loc).miles
+
+            if distance <= 50:
+                alerts.append(trial)
+                break
+
+    return alerts
