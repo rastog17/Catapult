@@ -1,6 +1,7 @@
+import os
 from openai import OpenAI
 
-client = OpenAI()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 def generate_disclaimer(summary):
@@ -19,3 +20,10 @@ Trial info:
     )
 
     return res.choices[0].message.content
+
+if __name__ == "__main__":
+    test_summary = "Trial testing a new diabetes medication in adults."
+    result = generate_disclaimer(test_summary)
+
+    print("\n=== GENERATED DISCLAIMER ===\n")
+    print(result)
