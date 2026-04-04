@@ -4,7 +4,7 @@ export function DashboardHome() {
       <h1 className="page-title">Care cost &amp; trials, together</h1>
       <p className="page-sub">
         Your finances are not only about spending. Healthcare is one of the largest financial risks most
-        households face. Catapult forecasts where costs are heading and surfaces clinical trials that may
+        households face. FutureCash Health forecasts where costs are heading and surfaces clinical trials that may
         offset out-of-pocket spend or provide study-related care.
       </p>
 
