@@ -1,4 +1,4 @@
-# FutureCash Health
+# ForecastRx
 
 FutureCash Health is a prototype product concept that combines:
 
