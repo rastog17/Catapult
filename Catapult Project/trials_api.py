@@ -6,7 +6,7 @@ BASE_URL = "https://clinicaltrials.gov/api/v2/studies"
 def search_trials(condition, location=None):
     params = {
         "query.cond": condition,
-        "pageSize": 25,
+        "pageSize": 50,
     }
 
     if location:
