@@ -1,6 +1,6 @@
 # ForecastRx
 
-FutureCash Health is a prototype product concept that combines:
+ForecastRx is a prototype product concept that combines:
 
 - Finance forecasting for healthcare and biotech operators
 - Clinical trial matching for patient and site coordination
